@@ -1,0 +1,130 @@
+pub const EULER_32: f32 = 2.71828182845904523536028747135266250;
+pub const EULER_64: f64 = 2.71828182845904523536028747135266250;
+
+pub const PI_32: f32 = 3.14159265358979323846264338327950288;
+pub const PI_64: f64 = 3.14159265358979323846264338327950288;
+
+pub const TAU_32: f32 = 6.28318530717958647692528676655900577;
+pub const TAU_64: f64 = 6.28318530717958647692528676655900577;
+
+compiler_intrinsic fn add<T: INumber>(first: T, second: T): T; 
+compiler_intrinsic fn add_checked<T: INumber>(first: T, second: T): Option<T>;
+
+compiler_intrinsic fn substract<T: INumber>(first: T, second: T): T; 
+compiler_intrinsic fn substract_checked<T: INumber>(first: T, second: T): Option<T>; 
+
+compiler_intrinsic fn divide<T: INumber>(first: T, second: T): T;
+compiler_intrinsic fn divide_checked<T: INumber>(first: T, second: T): Option<T>;
+
+compiler_intrinsic fn multiply<T: INumber>(first: T, second: T): T;
+compiler_intrinsic fn multiply_checked<T: INumber>(first: T, second: T): Option<T>;
+
+compiler_intrinsic fn remainder<T: INumber>(first: T, second: T): T;
+compiler_intrinsic fn remainder_checked<T: INumber>(first: T, second: T): Option<T>;
+
+compiler_intrinsic fn modulo<T: INumber>(first: T, second: T): T;
+compiler_intrinsic fn modulo_checked<T: INumber>(first: T, second: T): Option<T>;
+
+compiler_intrinsic fn shift_left<T: INumber>(first: T, second: T): T;
+compiler_intrinsic fn shift_left_checked<T: INumber>(first: T, second: T): Option<T>;
+
+compiler_intrinsic fn shift_right_zerofill<T: INumber>(first: T, second: T): T;
+compiler_intrinsic fn shift_right_zerofill_checked<T: INumber>(first: T, second: T): Option<T>;
+
+compiler_intrinsic fn shift_right_signfill<T: INumber>(first: T, second: T): T;
+compiler_intrinsic fn shift_right_signfill_checked<T: INumber>(first: T, second: T): Option<T>;
+
+compiler_intrinsic fn abs<T: INumber>(value: T): T;
+compiler_intrinsic fn acos<T: IFloatingNumber>(value: T): T;
+compiler_intrinsic fn asin<T: IFloatingNumber>(value: T): T;
+compiler_intrinsic fn atan<T: IFloatingNumber>(value: T): T;
+compiler_intrinsic fn atan2<T: IFloatingNumber>(y: T, x: T): T;
+compiler_intrinsic fn ceil<T: IFloatingNumber>(value: T): T;
+compiler_intrinsic fn cos<T: IFloatingNumber>(value: T): T;
+compiler_intrinsic fn cosh<T: IFloatingNumber>(value: T): T;
+compiler_intrinsic fn exp<T: IFloatingNumber>(value: T): T;
+compiler_intrinsic fn get_exponent<T: IFloatingNumber>(value: T): usize;
+compiler_intrinsic fn log<T: IFloatingNumber>(value: T): T;
+compiler_intrinsic fn min<T: INumber>(a: T, b: T): T;
+compiler_intrinsic fn max<T: INumber>(a: T, b: T): T;
+compiler_intrinsic fn pow<T: INumber>(a: T, b: T): T;
+compiler_intrinsic fn sin<T: IFloatingNumber>(value: T): T;
+compiler_intrinsic fn sinh<T: IFloatingNumber>(value: T): T;
+compiler_intrinsic fn sqrt<T: INumber>(value: T): T;
+compiler_intrinsic fn tan<T: IFloatingNumber>(value: T): T;
+compiler_intrinsic fn tanh<T: IFloatingNumber>(value: T): T;
+
+compiler_intrinsic fn negate_bit(value: bit): bit;
+
+pub operator "+" {
+	fn unary_addition<T: INumber>(a: T): T;
+	fn binary_addition<T: INumber>(a: T, b: T): T;
+}
+
+pub operator "-" {
+	fn unary_substraction<T: INumber>(a: T): T;
+	fn binary_substraction<T: INumber>(a: T, b: T): T;
+}
+
+
+pub operator "*" {
+	fn multiply<T: INumber>(a: T, b: T): T;
+}
+
+pub operator "*=" {
+	inline fn multiply_assign<T: operator("*")>(mut self, to_multiply: T): T -> self = self * to_multiply;
+}
+
+
+pub operator "/" {
+	fn divide<T: INumber>(a: T, b: T): T;
+}
+
+pub operator "÷" {
+	fn divide_truncated<T: INumber, R: IIntegerNumber>(a: T, b: T): R;
+}
+
+pub operator "^" {
+	fn pow<T: INumber>(a: T, b: T): T;
+}
+
+pub operator "⊻" {
+	fn bitwise_xor<T: INumber>(a: T, b: T): T;
+}
+
+pub operator "|" {
+	fn bitwise_or<T: INumber>(a: T, b: T): T;
+}
+
+pub operator "&"{
+	fn bitwise_and<T: INumber>(a: T, b: T): T;
+}
+
+pub operator "~" {
+	fn bitwise_not<T: INumber>(a: T): T;
+}
+
+pub operator ">>>" {
+	fn logical_shift_right<T: INumber>(a: T, b: T): T;
+}
+
+pub operator ">>" {
+	fn arithmetic_shift_right<T: INumber>(a: T, b: T): T;
+}
+
+pub operator "<<" <T: INumber> {
+	fn arithmetic_shift_left(a: T, b: T): T;
+}
+
+pub operator "%" <T: INumber> {
+	fn remainder(a: T, b: T): T;
+}
+
+pub operator "%%"<T: INumber> for INumber {
+	fn modulo(a: T, b: T): T;
+}
+
+pub operator "!" for bit {
+	inline fn negate(self): bit -> negate_bit(self);
+}
+

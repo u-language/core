@@ -1,0 +1,4 @@
+dynamic enum Option {
+	Some<T>(value: T),
+	None
+}

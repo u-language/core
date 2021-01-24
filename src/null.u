@@ -1,0 +1,7 @@
+pub const unsafe fn null<T>(): *const T {
+    return 0 as *const T;
+}
+
+pub const unsafe fn null_mut<T>(): *mut T {
+    return 0 as *mut T;
+}

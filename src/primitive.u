@@ -1,0 +1,55 @@
+pub compiler_intrinsic typedef bit;
+
+pub compiler_intrinsic typedef char;
+pub compiler_intrinsic typedef bool;
+
+pub compiler_intrinsic typedef usize;
+pub compiler_intrinsic typedef isize;
+
+pub compiler_intrinsic typedef u8;
+pub compiler_intrinsic typedef i8;
+
+pub compiler_intrinsic typedef u16;
+pub compiler_intrinsic typedef i16;
+
+pub compiler_intrinsic typedef u20;
+pub compiler_intrinsic typedef i20;
+
+pub compiler_intrinsic typedef u24;
+pub compiler_intrinsic typedef i24;
+
+pub compiler_intrinsic typedef u32;
+pub compiler_intrinsic typedef i32;
+
+pub compiler_intrinsic typedef u48;
+pub compiler_intrinsic typedef i48;
+
+pub compiler_intrinsic typedef u56;
+pub compiler_intrinsic typedef i56;
+
+pub compiler_intrinsic typedef u64;
+pub compiler_intrinsic typedef i64;
+
+pub compiler_intrinsic typedef u72;
+pub compiler_intrinsic typedef i72;
+
+pub compiler_intrinsic typedef u80;
+pub compiler_intrinsic typedef i80;
+
+pub compiler_intrinsic typedef u88;
+pub compiler_intrinsic typedef i88;
+
+pub compiler_intrinsic typedef u96;
+pub compiler_intrinsic typedef i96;
+
+pub compiler_intrinsic typedef u104;
+pub compiler_intrinsic typedef i104;
+
+pub compiler_intrinsic typedef u112;
+pub compiler_intrinsic typedef i112;
+
+pub compiler_intrinsic typedef u120;
+pub compiler_intrinsic typedef i120;
+
+pub compiler_intrinsic typedef u128;
+pub compiler_intrinsic typedef i128;
